@@ -1,660 +1,918 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iPhoneria Matias | Virtual Store - Bio Link</title>
-    <meta name="description" content="Sua próxima experiência Apple começa aqui. iPhones, acessórios e assistência técnica especializada com atendimento rápido via WhatsApp.">
-    
-    <!-- Open Graph for Social Sharing -->
-    <meta property="og:title" content="iPhoneria Matias | Virtual Store">
-    <meta property="og:description" content="iPhones novos e seminovos, acessórios premium e assistência especializada.">
-    <meta property="og:type" content="website">
-
-    <!-- Tailwind CSS -->
+    <title>Farmácia BIG MED - Cuidando da sua saúde</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            yellow: '#F3CA3E',
-                            yellowDark: '#D9B124',
-                            yellowLight: '#FDF3C8',
-                            dark: '#111111',
-                            cardBg: '#1A1A1A',
-                            surface: '#222222',
-                            grayText: '#A1A1AA'
-                        }
+                        brandYellow: '#FFEC00',
+                        brandRed: '#E30613',
+                        brandGreen: '#008738',
+                        brandDarkGreen: '#005D26',
                     },
                     fontFamily: {
-                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0A0A0A;
-            color: #F4F4F5;
-            -webkit-tap-highlight-color: transparent;
+        /* Custom styles for animations and details */
+        .glass-header {
+            background-color: rgba(255, 236, 0, 0.95);
+            backdrop-filter: blur(8px);
         }
-
-        .gold-gradient {
-            background: linear-gradient(135deg, #FDF3C8 0%, #F3CA3E 50%, #D9B124 100%);
-        }
-
-        .gold-border-gradient {
-            border-image: linear-gradient(135deg, #F3CA3E, #111111) 1;
-        }
-
-        .btn-glow {
-            box-shadow: 0 0 20px rgba(243, 202, 62, 0.25);
-        }
-
-        .btn-glow:hover {
-            box-shadow: 0 0 28px rgba(243, 202, 62, 0.45);
-        }
-
-        .glass-card {
-            background: rgba(26, 26, 26, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
+        .custom-scrollbar::-webkit-scrollbar {
             width: 6px;
         }
-        ::-webkit-scrollbar-track {
-            background: #0A0A0A;
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
         }
-        ::-webkit-scrollbar-thumb {
-            background: #333;
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #ccc;
             border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #aaa;
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-start p-0 sm:p-4 bg-black">
+<body class="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col justify-between selection:bg-brandRed selection:text-white">
 
-    <!-- Main Outer Wrapper -->
-    <div class="w-full max-w-md mx-auto min-h-screen sm:min-h-0 sm:my-4 sm:rounded-3xl bg-[#0F0F0F] text-zinc-100 border border-zinc-800 shadow-2xl overflow-hidden flex flex-col">
-        
-        <!-- TOP BRANDING BAR / LOGO HEADER -->
-        <header class="w-full bg-brand-yellow p-6 text-brand-dark flex flex-col items-center justify-center text-center relative shadow-lg">
-            
-            <!-- SVG Logo Replica matching image_df7ea0.png -->
-            <div class="w-28 h-28 relative mb-2 flex items-center justify-center">
-                <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-md" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Apple silhouette -->
-                    <path d="M72.2 46.8C75.8 42.4 78.2 36.3 77.5 30.2C72.2 30.4 65.8 33.7 62 38.1C58.6 42 55.6 48.3 56.5 54.3C62.4 54.8 68.5 51.2 72.2 46.8ZM76.8 56.1C68.6 56.1 61.2 61 56.8 61C52.3 61 45.9 56.6 39 56.8C29.9 56.9 21.6 62.1 16.9 70.3C7.4 86.8 14.5 111.2 23.7 124.5C28.2 131 33.6 138.2 40.7 137.9C47.5 137.6 50.1 133.5 58.3 133.5 C66.4 133.5 68.8 137.9 76 137.8C83.3 137.6 88 131.1 92.5 124.6C97.7 117 99.8 109.7 100 109.3C99.8 109.2 86.1 103.9 85.9 88.1C85.7 74.9 96.5 68.6 97 68.3C90.8 59.2 81.3 56.5 76.8 56.1Z" fill="#111111"/>
-                    <!-- IM Monogram -->
-                    <text x="105" y="128" font-family="'Times New Roman', serif" font-weight="bold" font-size="88" fill="#111111" letter-spacing="-2">IM</text>
-                    <!-- IPHONERIA MATIAS -->
-                    <text x="100" y="162" font-family="'Inter', sans-serif" font-weight="900" font-size="13" fill="#111111" text-anchor="middle" letter-spacing="2">IPHONERIA MATIAS</text>
-                    <!-- Divider top -->
-                    <line x1="20" y1="172" x2="180" y2="172" stroke="#111111" stroke-width="1.2"/>
-                    <!-- VIRTUAL STORE -->
-                    <text x="100" y="184" font-family="'Inter', sans-serif" font-weight="700" font-size="10.5" fill="#111111" text-anchor="middle" letter-spacing="3">VIRTUAL STORE</text>
-                    <!-- Divider bottom -->
-                    <line x1="20" y1="190" x2="180" y2="190" stroke="#111111" stroke-width="1.2"/>
-                </svg>
-            </div>
-
-            <h1 class="text-xl font-extrabold tracking-tight text-brand-dark">iPhoneria Matias</h1>
-            <p class="text-xs font-semibold tracking-widest uppercase opacity-80 mt-0.5">Virtual Store Apple Specialist</p>
-        </header>
-
-        <!-- MAIN BODY CONTENT -->
-        <main class="flex-1 p-4 space-y-6">
-
-            <!-- 1. CAPTAÇÃO DE LEAD NO INÍCIO (FUNIL INTERATIVO) -->
-            <section id="funnel-section" class="glass-card rounded-2xl p-5 border border-brand-yellow/30 relative overflow-hidden shadow-xl">
-                <!-- Decorative background blur -->
-                <div class="absolute -top-12 -right-12 w-28 h-28 bg-brand-yellow/10 rounded-full blur-2xl"></div>
-
-                <div class="flex items-center space-x-2 mb-3">
-                    <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-brand-yellow text-brand-dark font-bold text-xs">
-                        <i class="fa-solid fa-bolt"></i>
-                    </span>
-                    <h2 class="text-base font-bold text-white tracking-wide">Atendimento Rápido</h2>
-                </div>
-
-                <!-- STEP 1: CHOICE SELECTION -->
-                <div id="funnel-step-1" class="space-y-3">
-                    <p class="text-sm text-zinc-300 font-medium">Olá! O que você está procurando hoje?</p>
-                    
-                    <div class="grid grid-cols-2 gap-2 text-xs font-medium">
-                        <button onclick="selectOption('Comprar iPhone')" class="funnel-opt flex items-center p-3 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-brand-yellow hover:bg-zinc-800 transition text-left space-x-2">
-                            <i class="fa-solid fa-mobile-screen-button text-brand-yellow text-base"></i>
-                            <span>Comprar iPhone</span>
-                        </button>
-
-                        <button onclick="selectOption('Comprar Acessórios')" class="funnel-opt flex items-center p-3 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-brand-yellow hover:bg-zinc-800 transition text-left space-x-2">
-                            <i class="fa-solid fa-headphones text-brand-yellow text-base"></i>
-                            <span>Acessórios</span>
-                        </button>
-
-                        <button onclick="selectOption('Trocar meu iPhone')" class="funnel-opt flex items-center p-3 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-brand-yellow hover:bg-zinc-800 transition text-left space-x-2">
-                            <i class="fa-solid fa-arrows-rotate text-brand-yellow text-base"></i>
-                            <span>Trocar meu iPhone</span>
-                        </button>
-
-                        <button onclick="selectOption('Assistência Técnica')" class="funnel-opt flex items-center p-3 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-brand-yellow hover:bg-zinc-800 transition text-left space-x-2">
-                            <i class="fa-solid fa-wrench text-brand-yellow text-base"></i>
-                            <span>Assistência Técnica</span>
-                        </button>
-
-                        <button onclick="selectOption('Fazer Orçamento')" class="funnel-opt flex items-center p-3 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-brand-yellow hover:bg-zinc-800 transition text-left space-x-2">
-                            <i class="fa-solid fa-calculator text-brand-yellow text-base"></i>
-                            <span>Fazer Orçamento</span>
-                        </button>
-
-                        <button onclick="selectOption('Outro Assunto')" class="funnel-opt flex items-center p-3 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-brand-yellow hover:bg-zinc-800 transition text-left space-x-2">
-                            <i class="fa-solid fa-circle-question text-brand-yellow text-base"></i>
-                            <span>Outro Assunto</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- STEP 2: LEAD FORM -->
-                <div id="funnel-step-2" class="hidden space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span id="selected-badge" class="inline-block text-xs bg-brand-yellow/20 text-brand-yellow px-2.5 py-1 rounded-full font-semibold border border-brand-yellow/30">
-                            Interesse: <span id="badge-text">---</span>
-                        </span>
-                        <button onclick="resetFunnel()" class="text-xs text-zinc-400 hover:text-white underline">
-                            Alterar
-                        </button>
-                    </div>
-
-                    <form onsubmit="handleFunnelSubmit(event)" class="space-y-3">
-                        <div>
-                            <label class="block text-xs font-medium text-zinc-400 mb-1">Seu Nome *</label>
-                            <input type="text" id="lead-name" required placeholder="Digite seu nome"
-                                class="w-full px-3 py-2.5 rounded-xl bg-zinc-900 border border-zinc-700 text-white text-sm focus:outline-none focus:border-brand-yellow transition">
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-medium text-zinc-400 mb-1">Seu WhatsApp *</label>
-                            <input type="tel" id="lead-phone" required placeholder="(00) 90000-0000"
-                                class="w-full px-3 py-2.5 rounded-xl bg-zinc-900 border border-zinc-700 text-white text-sm focus:outline-none focus:border-brand-yellow transition">
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-medium text-zinc-400 mb-1">Qual modelo/serviço específico?</label>
-                            <input type="text" id="lead-detail" placeholder="Ex: iPhone 13 128GB, Troca de tela..."
-                                class="w-full px-3 py-2.5 rounded-xl bg-zinc-900 border border-zinc-700 text-white text-sm focus:outline-none focus:border-brand-yellow transition">
-                        </div>
-
-                        <button type="submit" class="w-full py-3 bg-brand-yellow text-brand-dark font-bold text-sm rounded-xl hover:bg-yellow-400 active:scale-98 transition flex items-center justify-center space-x-2 btn-glow">
-                            <i class="fa-brands fa-whatsapp text-lg"></i>
-                            <span>Receber Atendimento via WhatsApp</span>
-                        </button>
-                    </form>
-                </div>
-            </section>
-
-            <!-- 2. CABEÇALHO DE PROFILE / BIO -->
-            <section class="text-center space-y-3 px-2">
-                <div class="inline-flex items-center space-x-2 text-xs bg-zinc-900 text-zinc-300 px-3 py-1 rounded-full border border-zinc-800">
-                    <i class="fa-brands fa-instagram text-brand-yellow"></i>
-                    <span class="font-semibold text-brand-yellow">@iphoneria.matias</span>
-                </div>
-
-                <p class="text-sm text-zinc-300 leading-relaxed font-normal">
-                    Sua próxima experiência Apple começa aqui.<br>
-                    <span class="text-zinc-400 text-xs">iPhones, acessórios e soluções completas com garantia e máxima segurança.</span>
-                </p>
-
-                <!-- Trust Indicators Bar -->
-                <div class="flex items-center justify-around py-2 px-3 rounded-xl bg-zinc-900/60 border border-zinc-800/80 text-[11px] font-medium text-zinc-300">
-                    <div class="flex items-center space-x-1">
-                        <i class="fa-solid fa-circle-check text-brand-yellow"></i>
-                        <span>Atendimento Rápido</span>
-                    </div>
-                    <span class="text-zinc-700">•</span>
-                    <div class="flex items-center space-x-1">
-                        <i class="fa-solid fa-shield-halved text-brand-yellow"></i>
-                        <span>Garantia</span>
-                    </div>
-                    <span class="text-zinc-700">•</span>
-                    <div class="flex items-center space-x-1">
-                        <i class="fa-solid fa-award text-brand-yellow"></i>
-                        <span>100% Original</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 3. DESTAQUES DA LOJA (4 PRODUTOS PRINCIPAIS) -->
-            <section class="space-y-3">
-                <div class="flex items-center justify-between px-1">
-                    <h3 class="text-sm font-bold text-white tracking-wide uppercase flex items-center space-x-2">
-                        <i class="fa-solid fa-star text-brand-yellow"></i>
-                        <span>Destaques da Loja</span>
-                    </h3>
-                    <span class="text-[10px] text-zinc-500 uppercase tracking-widest font-semibold">Mais Pedidos</span>
-                </div>
-
-                <div class="grid grid-cols-2 gap-3" id="products-grid">
-                    <!-- Product items dynamically generated or structured -->
-
-                    <!-- Product 1 -->
-                    <div class="bg-zinc-900/90 border border-zinc-800 rounded-2xl p-3 flex flex-col justify-between hover:border-brand-yellow/50 transition">
-                        <div class="space-y-2">
-                            <div class="w-full h-32 bg-zinc-950 rounded-xl flex items-center justify-center p-2 relative overflow-hidden group">
-                                <img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&auto=format&fit=crop&q=80" 
-                                     alt="iPhone 15" 
-                                     class="h-full object-contain group-hover:scale-105 transition duration-300"
-                                     onerror="this.onerror=null; this.src='https://placehold.co/300x300/1a1a1a/f3ca3e?text=iPhone+15';">
-                                <span class="absolute top-2 left-2 bg-brand-yellow text-brand-dark text-[9px] font-extrabold px-1.5 py-0.5 rounded">Novo</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-xs text-white">iPhone 15</h4>
-                                <p class="text-[10px] text-zinc-400 line-clamp-2 mt-0.5">Desempenho, câmera de 48MP e Dynamic Island.</p>
-                            </div>
-                        </div>
-                        <div class="mt-3 pt-2 border-t border-zinc-800/80 flex flex-col space-y-2">
-                            <span class="text-xs font-extrabold text-brand-yellow">Consulte Valores</span>
-                            <button onclick="inquireProduct('iPhone 15')" class="w-full py-1.5 px-2 bg-zinc-800 hover:bg-brand-yellow hover:text-brand-dark text-white rounded-lg text-xs font-semibold transition flex items-center justify-center space-x-1">
-                                <i class="fa-brands fa-whatsapp text-xs"></i>
-                                <span>Tenho Interesse</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Product 2 -->
-                    <div class="bg-zinc-900/90 border border-zinc-800 rounded-2xl p-3 flex flex-col justify-between hover:border-brand-yellow/50 transition">
-                        <div class="space-y-2">
-                            <div class="w-full h-32 bg-zinc-950 rounded-xl flex items-center justify-center p-2 relative overflow-hidden group">
-                                <img src="https://images.unsplash.com/photo-1695048133021-dbe0381e4693?w=400&auto=format&fit=crop&q=80" 
-                                     alt="iPhone 15 Pro" 
-                                     class="h-full object-contain group-hover:scale-105 transition duration-300"
-                                     onerror="this.onerror=null; this.src='https://placehold.co/300x300/1a1a1a/f3ca3e?text=iPhone+15+Pro';">
-                                <span class="absolute top-2 left-2 bg-brand-yellow text-brand-dark text-[9px] font-extrabold px-1.5 py-0.5 rounded">Pro</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-xs text-white">iPhone 15 Pro</h4>
-                                <p class="text-[10px] text-zinc-400 line-clamp-2 mt-0.5">Titanio premium e o poderoso chip A17 Pro.</p>
-                            </div>
-                        </div>
-                        <div class="mt-3 pt-2 border-t border-zinc-800/80 flex flex-col space-y-2">
-                            <span class="text-xs font-extrabold text-brand-yellow">Consulte Valores</span>
-                            <button onclick="inquireProduct('iPhone 15 Pro')" class="w-full py-1.5 px-2 bg-zinc-800 hover:bg-brand-yellow hover:text-brand-dark text-white rounded-lg text-xs font-semibold transition flex items-center justify-center space-x-1">
-                                <i class="fa-brands fa-whatsapp text-xs"></i>
-                                <span>Tenho Interesse</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Product 3 -->
-                    <div class="bg-zinc-900/90 border border-zinc-800 rounded-2xl p-3 flex flex-col justify-between hover:border-brand-yellow/50 transition">
-                        <div class="space-y-2">
-                            <div class="w-full h-32 bg-zinc-950 rounded-xl flex items-center justify-center p-2 relative overflow-hidden group">
-                                <img src="https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=400&auto=format&fit=crop&q=80" 
-                                     alt="AirPods" 
-                                     class="h-full object-contain group-hover:scale-105 transition duration-300"
-                                     onerror="this.onerror=null; this.src='https://placehold.co/300x300/1a1a1a/f3ca3e?text=AirPods';">
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-xs text-white">AirPods Apple</h4>
-                                <p class="text-[10px] text-zinc-400 line-clamp-2 mt-0.5">Áudio imersivo e cancelamento de ruído ativado.</p>
-                            </div>
-                        </div>
-                        <div class="mt-3 pt-2 border-t border-zinc-800/80 flex flex-col space-y-2">
-                            <span class="text-xs font-extrabold text-brand-yellow">Consulte Valores</span>
-                            <button onclick="inquireProduct('AirPods Apple')" class="w-full py-1.5 px-2 bg-zinc-800 hover:bg-brand-yellow hover:text-brand-dark text-white rounded-lg text-xs font-semibold transition flex items-center justify-center space-x-1">
-                                <i class="fa-brands fa-whatsapp text-xs"></i>
-                                <span>Tenho Interesse</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Product 4 -->
-                    <div class="bg-zinc-900/90 border border-zinc-800 rounded-2xl p-3 flex flex-col justify-between hover:border-brand-yellow/50 transition">
-                        <div class="space-y-2">
-                            <div class="w-full h-32 bg-zinc-950 rounded-xl flex items-center justify-center p-2 relative overflow-hidden group">
-                                <img src="https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=400&auto=format&fit=crop&q=80" 
-                                     alt="Apple Watch" 
-                                     class="h-full object-contain group-hover:scale-105 transition duration-300"
-                                     onerror="this.onerror=null; this.src='https://placehold.co/300x300/1a1a1a/f3ca3e?text=Apple+Watch';">
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-xs text-white">Apple Watch</h4>
-                                <p class="text-[10px] text-zinc-400 line-clamp-2 mt-0.5">Monitoramento de saúde e praticidade diária.</p>
-                            </div>
-                        </div>
-                        <div class="mt-3 pt-2 border-t border-zinc-800/80 flex flex-col space-y-2">
-                            <span class="text-xs font-extrabold text-brand-yellow">Consulte Valores</span>
-                            <button onclick="inquireProduct('Apple Watch')" class="w-full py-1.5 px-2 bg-zinc-800 hover:bg-brand-yellow hover:text-brand-dark text-white rounded-lg text-xs font-semibold transition flex items-center justify-center space-x-1">
-                                <i class="fa-brands fa-whatsapp text-xs"></i>
-                                <span>Tenho Interesse</span>
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- 4. CTA INTERMEDIÁRIA DE CONVERSÃO -->
-            <section class="p-4 rounded-2xl bg-gradient-to-r from-zinc-900 via-zinc-900 to-zinc-950 border border-brand-yellow/30 text-center space-y-3 relative overflow-hidden">
-                <div class="space-y-1">
-                    <h3 class="text-sm font-bold text-white">Encontrou o produto que procura?</h3>
-                    <p class="text-xs text-zinc-400">Fale com nossa equipe agora mesmo e consulte a disponibilidade de estoque e condições de pagamento.</p>
-                </div>
-
-                <a href="#" onclick="openGeneralWhatsApp('Atendimento Geral'); return false;" class="inline-flex items-center justify-center space-x-2 w-full py-3 bg-brand-yellow text-brand-dark font-extrabold text-sm rounded-xl hover:bg-yellow-400 transition shadow-lg btn-glow">
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span>Falar Direto no WhatsApp</span>
-                </a>
-            </section>
-
-            <!-- 5. PRINCIPAIS LINKS DE CONTATO -->
-            <section class="space-y-2.5">
-                <h3 class="text-xs font-bold text-zinc-400 uppercase tracking-wider px-1">Fale com a Gente</h3>
-
-                <!-- Link 1: WhatsApp (High Priority Highlight) -->
-                <a href="#" onclick="openGeneralWhatsApp('Atendimento Direto'); return false;" 
-                   class="flex items-center justify-between p-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-emerald-500 text-white font-bold shadow-md hover:opacity-95 transition">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center text-xl">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </div>
-                        <div>
-                            <div class="text-sm leading-tight">Atendimento WhatsApp</div>
-                            <div class="text-[11px] font-normal text-emerald-100">Orçamentos e compras em tempo real</div>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-chevron-right text-xs opacity-70"></i>
-                </a>
-
-                <!-- Link 2: Instagram Direct -->
-                <a href="https://instagram.com" target="_blank" id="link-instagram" 
-                   class="flex items-center justify-between p-3.5 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-white font-medium transition">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-yellow-500 via-rose-500 to-purple-600 flex items-center justify-center text-xl">
-                            <i class="fa-brands fa-instagram text-white"></i>
-                        </div>
-                        <div>
-                            <div class="text-sm font-semibold text-zinc-100">Siga no Instagram</div>
-                            <div class="text-[11px] text-zinc-400">Novidades diárias e unboxings</div>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-chevron-right text-xs text-zinc-500"></i>
-                </a>
-
-                <!-- Link 3: Location / Map -->
-                <a href="#" onclick="openLocation(); return false;" 
-                   class="flex items-center justify-between p-3.5 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-white font-medium transition">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 rounded-xl bg-zinc-800 flex items-center justify-center text-brand-yellow text-lg">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
-                        <div>
-                            <div class="text-sm font-semibold text-zinc-100">Localização da Loja</div>
-                            <div class="text-[11px] text-zinc-400" id="link-address-text">Ver endereço completo e como chegar</div>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-chevron-right text-xs text-zinc-500"></i>
-                </a>
-
-                <!-- Link 4: Catálogo Completo -->
-                <a href="#" onclick="openGeneralWhatsApp('Quero ver o Catálogo Completo'); return false;" 
-                   class="flex items-center justify-between p-3.5 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-white font-medium transition">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 rounded-xl bg-zinc-800 flex items-center justify-center text-brand-yellow text-lg">
-                            <i class="fa-solid fa-store"></i>
-                        </div>
-                        <div>
-                            <div class="text-sm font-semibold text-zinc-100">Catálogo de Produtos</div>
-                            <div class="text-[11px] text-zinc-400">Solicitar PDF do estoque atualizado</div>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-chevron-right text-xs text-zinc-500"></i>
-                </a>
-
-                <!-- Link 5: Assistência Técnica -->
-                <a href="#" onclick="selectOption('Assistência Técnica'); scrollToFunnel(); return false;" 
-                   class="flex items-center justify-between p-3.5 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-white font-medium transition">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 rounded-xl bg-zinc-800 flex items-center justify-center text-brand-yellow text-lg">
-                            <i class="fa-solid fa-screwdriver-wrench"></i>
-                        </div>
-                        <div>
-                            <div class="text-sm font-semibold text-zinc-100">Assistência Especializada</div>
-                            <div class="text-[11px] text-zinc-400">Troca de tela, bateria e manutenção</div>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-chevron-right text-xs text-zinc-500"></i>
-                </a>
-            </section>
-
-            <!-- 6. SEÇÃO DE CONFIANÇA & BENEFÍCIOS -->
-            <section class="glass-card rounded-2xl p-4 border border-zinc-800/80 space-y-3">
-                <h3 class="text-xs font-bold text-white uppercase tracking-wider flex items-center space-x-1.5">
-                    <i class="fa-solid fa-shield-cat text-brand-yellow"></i>
-                    <span>Por que escolher a iPhoneria Matias?</span>
-                </h3>
-
-                <div class="grid grid-cols-1 gap-2.5 text-xs text-zinc-300">
-                    <div class="flex items-start space-x-3 p-2 bg-zinc-900/50 rounded-xl">
-                        <i class="fa-solid fa-user-shield text-brand-yellow text-base mt-0.5"></i>
-                        <div>
-                            <span class="font-bold text-white block">Atendimento Humanizado</span>
-                            <span class="text-[11px] text-zinc-400">Consultores prontos para entender sua necessidade.</span>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start space-x-3 p-2 bg-zinc-900/50 rounded-xl">
-                        <i class="fa-solid fa-box-archive text-brand-yellow text-base mt-0.5"></i>
-                        <div>
-                            <span class="font-bold text-white block">Aparelhos Inspecionados</span>
-                            <span class="text-[11px] text-zinc-400">Rigoroso controle de qualidade e procedência garantida.</span>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start space-x-3 p-2 bg-zinc-900/50 rounded-xl">
-                        <i class="fa-solid fa-truck-fast text-brand-yellow text-base mt-0.5"></i>
-                        <div>
-                            <span class="font-bold text-white block">Entrega Segura e Rápida</span>
-                            <span class="text-[11px] text-zinc-400">Opções de retirada ou envio expresso com seguro.</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECONDARY CTA -->
-            <section class="text-center p-4 bg-zinc-900/40 rounded-2xl border border-zinc-800/60 space-y-2">
-                <p class="text-xs text-zinc-300 font-medium">Ainda com dúvidas de qual iPhone escolher?</p>
-                <button onclick="openGeneralWhatsApp('Quero ajuda para escolher o iPhone ideal');" 
-                        class="w-full py-2.5 bg-zinc-800 hover:bg-zinc-700 text-brand-yellow font-bold text-xs rounded-xl transition border border-brand-yellow/20">
-                    Quero Ajuda Personalizada
-                </button>
-            </section>
-
-        </main>
-
-        <!-- 7. RODAPÉ COMPLETO -->
-        <footer class="w-full bg-zinc-950 p-6 border-t border-zinc-800 text-center space-y-4">
-            
-            <!-- Mini Footer Brand -->
-            <div class="flex flex-col items-center justify-center space-y-1">
-                <div class="w-12 h-12 bg-brand-yellow rounded-xl flex items-center justify-center p-1 text-brand-dark">
-                    <!-- Mini Logo Symbol -->
-                    <i class="fa-brands fa-apple text-2xl"></i>
-                </div>
-                <div class="font-bold text-sm text-white mt-1">iPhoneria Matias</div>
-                <div class="text-[10px] text-brand-yellow font-semibold uppercase tracking-widest">Virtual Store</div>
-            </div>
-
-            <!-- Footer info list -->
-            <div class="space-y-1.5 text-xs text-zinc-400">
-                <p id="footer-address"><i class="fa-solid fa-location-dot text-brand-yellow mr-1"></i> Atendimento Online & Presencial</p>
-                <p id="footer-hours"><i class="fa-regular fa-clock text-brand-yellow mr-1"></i> Seg a Sáb: 09:00 - 19:00</p>
-                <p id="footer-phone"><i class="fa-brands fa-whatsapp text-brand-yellow mr-1"></i> WhatsApp Oficial Disponível</p>
-            </div>
-
-            <div class="pt-3 border-t border-zinc-900 text-[10px] text-zinc-600 flex flex-col items-center justify-center space-y-1">
-                <p>© <span id="year">2026</span> iPhoneria Matias. Todos os direitos reservados.</p>
-                <p class="text-[9px] text-zinc-600">Página Otimizada para Vendas & Bio do Instagram</p>
-            </div>
-        </footer>
-
+    <div class="bg-brandRed text-white text-xs font-semibold py-2 px-4 text-center tracking-wide">
+        <div class="container mx-auto flex justify-between items-center px-2">
+            <span class="hidden sm:inline"><i class="fa-solid fa-truck-medical mr-1.5"></i> Entregas rápidas em toda a região</span>
+            <span class="mx-auto sm:mx-0"><i class="fa-solid fa-clock mr-1"></i> Atendimento Segunda a Sábado: 07h às 21h</span>
+            <span class="hidden md:inline"><i class="fa-brands fa-whatsapp mr-1"></i> Peça pelo WhatsApp: (82) 99640-2650</span>
+        </div>
     </div>
 
-    <!-- JAVASCRIPT LOGIC -->
+    <header class="sticky top-0 z-40 bg-brandYellow shadow-md transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- Logo Section -->
+            <a href="#inicio" class="flex items-center gap-3 group">
+                <div class="bg-white p-1.5 rounded-xl shadow-sm border border-yellow-300 flex items-center justify-center">
+                    <!-- SVG Fallback for Logo matching image_6928bf.png visual style -->
+                    <img src="logo.png">
+                </div>
+                <div class="hidden sm:block">
+                    <span class="block text-xl font-black tracking-tight text-brandRed leading-none">FARMÁCIA</span>
+                    <span class="block text-2xl font-black tracking-wider text-brandGreen leading-none">BIG MED</span>
+                    <span class="text-[10px] font-semibold text-gray-800 tracking-wider uppercase block mt-0.5">Cuidando da sua saúde</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Menu -->
+            <nav class="hidden md:flex items-center space-x-6 font-semibold text-gray-800 text-sm">
+                <a href="#inicio" class="hover:text-brandRed transition-colors py-1 border-b-2 border-transparent hover:border-brandRed">Início</a>
+                <a href="#produtos" class="hover:text-brandRed transition-colors py-1 border-b-2 border-transparent hover:border-brandRed">Produtos</a>
+                <a href="#categorias" class="hover:text-brandRed transition-colors py-1 border-b-2 border-transparent hover:border-brandRed">Categorias</a>
+                <a href="#sobre" class="hover:text-brandRed transition-colors py-1 border-b-2 border-transparent hover:border-brandRed">Sobre Nós</a>
+                <a href="#contato" class="hover:text-brandRed transition-colors py-1 border-b-2 border-transparent hover:border-brandRed">Contato</a>
+            </nav>
+
+            <!-- Right Actions (Cart & Quick Order) -->
+            <div class="flex items-center gap-3">
+                <!-- Cart Button -->
+                <button id="cartToggleBtn" onclick="toggleCartDrawer()" class="relative bg-white text-gray-800 p-2.5 rounded-full shadow hover:bg-gray-100 transition-all focus:outline-none focus:ring-2 focus:ring-brandRed">
+                    <i class="fa-solid fa-cart-shopping text-lg text-brandRed"></i>
+                    <span id="cartBadge" class="absolute -top-1 -right-1 bg-brandGreen text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white transform scale-100 transition-transform">0</span>
+                </button>
+
+                <!-- WhatsApp Quick Order Button Header -->
+                <a href="https://wa.me/5582996402650?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido%20ou%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener" class="hidden sm:flex items-center gap-2 bg-brandGreen hover:bg-brandDarkGreen text-white px-4 py-2 rounded-full font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Fazer Pedido</span>
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="md:hidden text-gray-800 text-2xl p-1 focus:outline-none">
+                    <i class="fa-solid fa-bars" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-yellow-400 border-t border-yellow-500 px-4 py-3 space-y-2">
+            <a href="#inicio" onclick="toggleMobileMenu()" class="block py-2 text-gray-900 font-semibold border-b border-yellow-300">Início</a>
+            <a href="#produtos" onclick="toggleMobileMenu()" class="block py-2 text-gray-900 font-semibold border-b border-yellow-300">Produtos</a>
+            <a href="#categorias" onclick="toggleMobileMenu()" class="block py-2 text-gray-900 font-semibold border-b border-yellow-300">Categorias</a>
+            <a href="#sobre" onclick="toggleMobileMenu()" class="block py-2 text-gray-900 font-semibold border-b border-yellow-300">Sobre Nós</a>
+            <a href="#contato" onclick="toggleMobileMenu()" class="block py-2 text-gray-900 font-semibold">Contato</a>
+            <a href="https://wa.me/5582996402650?text=Ol%C3%A1!%20Acessei%20o%20site%20da%20farm%C3%A1cia%20e%20gostaria%20de%20atendimento." target="_blank" class="w-full text-center bg-brandGreen text-white py-2.5 rounded-lg font-bold flex items-center justify-center gap-2 mt-2">
+                <i class="fa-brands fa-whatsapp"></i> Falar com Farmacêutico
+            </a>
+        </div>
+    </header>
+
+    <section id="inicio" class="relative bg-gradient-to-r from-yellow-300 via-brandYellow to-yellow-200 py-12 md:py-20 overflow-hidden">
+        <div class="container mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="max-w-xl text-center md:text-left">
+                <span class="inline-block bg-brandRed text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3 shadow-sm">
+                    <i class="fa-solid fa-heart-pulse mr-1"></i> Atendimento Humanizado
+                </span>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 leading-tight mb-4">
+                    Cuidado e saúde mais <span class="text-brandRed">perto de você.</span>
+                </h1>
+                <p class="text-gray-700 text-base sm:text-lg mb-8 leading-relaxed font-medium">
+                    Encontre produtos para o seu dia a dia e faça seu pedido de maneira simples, rápida e prática diretamente pelo nosso WhatsApp.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+                    <a href="#produtos" class="w-full sm:w-auto bg-brandRed hover:bg-red-700 text-white font-bold py-3.5 px-8 rounded-full shadow-lg hover:shadow-xl transition-all text-center flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-basket-shopping"></i> Ver Produtos
+                    </a>
+                    <a href="https://wa.me/5582996402650?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20Farm%C3%A1cia%20BIG%20MED." target="_blank" rel="noopener" class="w-full sm:w-auto bg-brandGreen hover:bg-brandDarkGreen text-white font-bold py-3.5 px-8 rounded-full shadow-lg hover:shadow-xl transition-all text-center flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Falar com a Farmácia
+                    </a>
+                </div>
+            </div>
+
+            <!-- Banner Graphic Illustration -->
+            <div class="w-full md:w-1/2 flex justify-center">
+                <div class="relative bg-white/60 backdrop-blur-md p-6 rounded-3xl border border-white/80 shadow-2xl max-w-md w-full">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-2xl shadow-sm text-center border border-gray-100 hover:shadow-md transition-shadow">
+                            <i class="fa-solid fa-pills text-3xl text-brandRed mb-2"></i>
+                            <h3 class="font-bold text-gray-800 text-sm">Medicamentos</h3>
+                            <p class="text-xs text-gray-500 mt-1">Gerais e Isentos</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl shadow-sm text-center border border-gray-100 hover:shadow-md transition-shadow">
+                            <i class="fa-solid fa-pump-soap text-3xl text-brandGreen mb-2"></i>
+                            <h3 class="font-bold text-gray-800 text-sm">Higiene & Dermo</h3>
+                            <p class="text-xs text-gray-500 mt-1">Cuidados Pessoais</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl shadow-sm text-center border border-gray-100 hover:shadow-md transition-shadow">
+                            <i class="fa-solid fa-prescription-bottle-medical text-3xl text-amber-500 mb-2"></i>
+                            <h3 class="font-bold text-gray-800 text-sm">Vitaminas</h3>
+                            <p class="text-xs text-gray-500 mt-1">Suplementação</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl shadow-sm text-center border border-gray-100 hover:shadow-md transition-shadow">
+                            <i class="fa-solid fa-baby text-3xl text-blue-500 mb-2"></i>
+                            <h3 class="font-bold text-gray-800 text-sm">Mamãe & Bebê</h3>
+                            <p class="text-xs text-gray-500 mt-1">Linha Infantil</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 p-3 bg-yellow-100 border border-yellow-300 rounded-xl flex items-center gap-3">
+                        <i class="fa-solid fa-truck-fast text-brandRed text-2xl"></i>
+                        <div class="text-xs text-gray-800 font-semibold">
+                            Peça pelo WhatsApp e receba no conforto do seu lar!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="categorias" class="py-12 bg-white border-b border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900">Nossas Categorias</h2>
+                <p class="text-gray-600 mt-2 text-sm">Navegue pelas nossas seções e encontre tudo o que precisa com facilidade.</p>
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3" id="categoriesGrid">
+                <!-- Dynamically Populated or Static -->
+            </div>
+        </div>
+    </section>
+
+    <section id="produtos" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <!-- Section Title & Filters Bar -->
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900">Catálogo de Produtos</h2>
+                    <p class="text-gray-600 text-sm">Selecione seus itens para montar seu pedido via WhatsApp.</p>
+                </div>
+
+                <!-- Controls: Search & Sorting -->
+                <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                    <!-- Search Input -->
+                    <div class="relative flex-1 sm:w-64">
+                        <input type="text" id="searchInput" oninput="filterProducts()" placeholder="Buscar produto..." class="w-full pl-9 pr-4 py-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brandRed text-sm">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-gray-400 text-xs"></i>
+                    </div>
+
+                    <!-- Category Filter Dropdown -->
+                    <select id="categorySelect" onchange="filterProducts()" class="py-2 px-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brandRed text-sm bg-white">
+                        <option value="todos">Todas as Categorias</option>
+                    </select>
+
+                    <!-- Order Select -->
+                    <select id="sortSelect" onchange="filterProducts()" class="py-2 px-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brandRed text-sm bg-white">
+                        <option value="padrao">Ordenar por: Destaques</option>
+                        <option value="menor-preco">Menor Preço</option>
+                        <option value="maior-preco">Maior Preço</option>
+                        <option value="nome">Nome (A-Z)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Legal Warning Banner -->
+            <div class="mb-6 p-3 bg-blue-50 border-l-4 border-blue-500 rounded-r-xl text-xs text-blue-800 flex items-start gap-2.5 shadow-sm">
+                <i class="fa-solid fa-circle-info text-blue-500 text-base mt-0.5"></i>
+                <div>
+                    <strong>Aviso Legal & Sanitário:</strong> Medicamentos sujeitos à receita médica não são comercializados de forma direta pelo carrinho automático sem validação prévia. Consulte nossos farmacêuticos de plantão via WhatsApp para orientações e envio de receituários.
+                </div>
+            </div>
+
+            <!-- Products Grid Container -->
+            <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Products will be dynamically rendered here -->
+            </div>
+
+            <!-- Empty Search State -->
+            <div id="emptySearch" class="hidden text-center py-12">
+                <i class="fa-solid fa-box-open text-5xl text-gray-300 mb-3"></i>
+                <h3 class="text-lg font-bold text-gray-700">Nenhum produto encontrado</h3>
+                <p class="text-gray-500 text-sm mt-1">Tente ajustar seus termos de busca ou filtros de categoria.</p>
+                <button onclick="resetFilters()" class="mt-4 bg-brandRed text-white px-4 py-2 rounded-lg text-xs font-bold">Limpar Filtros</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="py-16 bg-white border-t border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Visual / Mascot Branding -->
+                <div class="bg-brandYellow p-8 rounded-3xl shadow-lg border border-yellow-300 flex flex-col items-center text-center relative overflow-hidden">
+                    <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center p-2 shadow-inner mb-4">
+                        <svg class="h-28 w-auto" viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="200" height="180" rx="16" fill="#FFEC00"/>
+                            <path d="M100 40C85 40 75 52 75 67V105C75 120 85 132 100 132C115 132 125 120 125 105V67C125 52 115 40 100 40Z" fill="#E30613"/>
+                            <path d="M75 86H125V105C125 120 115 132 100 132C85 132 75 120 75 105V86Z" fill="#FFFFFF"/>
+                            <path d="M85 45C85 45 95 38 115 42L112 48H85V45Z" fill="#D97706"/>
+                            <circle cx="93" cy="60" r="3" fill="#000"/>
+                            <circle cx="107" cy="60" r="3" fill="#000"/>
+                            <path d="M94 70 C97 75, 103 75, 106 70" stroke="#000" stroke-width="2" stroke-linecap="round" fill="none"/>
+                            <path d="M75 75L58 60M58 60L52 64M58 60L55 53" stroke="#D97706" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M125 75L142 60M142 60L148 64M142 60L145 53" stroke="#D97706" stroke-width="4" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-black text-brandRed">FARMÁCIA BIG MED</h3>
+                    <p class="text-xs font-bold text-brandDarkGreen uppercase tracking-widest mt-1">Cuidando da sua saúde</p>
+                    <p class="text-gray-700 text-sm mt-4 leading-relaxed">
+                        Sempre pronta para atender você e sua família com atenção, agilidade e o máximo respeito técnico.
+                    </p>
+                </div>
+
+                <!-- Text Presentation -->
+                <div>
+                    <span class="text-brandRed font-bold text-xs uppercase tracking-wider block mb-2">Sobre Nossa Farmácia</span>
+                    <h2 class="text-3xl font-extrabold text-gray-900 mb-4">Tradição, Qualidade e Atendimento Próximo</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        A <strong>Farmácia BIG MED</strong> dedica-se a oferecer soluções completas para a saúde, bem-estar e cuidados pessoais da comunidade. Nosso foco é unir conveniência e atendimento humano.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Trabalhamos com produtos originais, marcas consagradas do mercado farmacêutico e uma equipe sempre preparada para esclarecer dúvidas e prestar a melhor orientação.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-3 bg-gray-50 rounded-xl border border-gray-200">
+                            <i class="fa-solid fa-user-doctor text-brandRed text-xl mb-1"></i>
+                            <h4 class="font-bold text-gray-800 text-sm">Farmacêuticos Responsáveis</h4>
+                            <p class="text-xs text-gray-500">Orientação responsável</p>
+                        </div>
+                        <div class="p-3 bg-gray-50 rounded-xl border border-gray-200">
+                            <i class="fa-solid fa-truck-ramp-box text-brandGreen text-xl mb-1"></i>
+                            <h4 class="font-bold text-gray-800 text-sm">Entrega Rápida</h4>
+                            <p class="text-xs text-gray-500">Directly to your door</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-xl mx-auto mb-10">
+                <h2 class="text-3xl font-extrabold text-gray-900">Informações de Contato</h2>
+                <p class="text-gray-600 text-sm mt-2">Estamos à sua disposição. Entre em contato ou venha nos visitar.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <!-- Phone & WhatsApp Card -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 text-center hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-green-100 text-brandGreen rounded-full flex items-center justify-center mx-auto mb-4 text-xl">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800 text-lg mb-1">Atendimento WhatsApp</h3>
+                    <p class="text-gray-600 text-sm mb-4">(82) 99640-2650</p>
+                    <a href="https://wa.me/5582996402650" target="_blank" class="inline-block bg-brandGreen text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-brandDarkGreen transition-colors">
+                        Iniciar Conversa
+                    </a>
+                </div>
+
+                <!-- Hours Card -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 text-center hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-yellow-100 text-yellow-700 rounded-full flex items-center justify-center mx-auto mb-4 text-xl">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800 text-lg mb-1">Horário de Funcionamento</h3>
+                    <p class="text-gray-600 text-sm">Segunda a Sábado: 07h às 21h</p>
+                    <p class="text-gray-600 text-sm mt-1">Domingos e Feriados: 08h às 14h</p>
+                </div>
+
+                <!-- Address & Location Card -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 text-center hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-red-100 text-brandRed rounded-full flex items-center justify-center mx-auto mb-4 text-xl">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800 text-lg mb-1">Localização</h3>
+                    <p class="text-gray-600 text-sm mb-4">Consulte o endereço completo com nossa equipe de atendimento.</p>
+                    <a href="https://maps.google.com" target="_blank" class="inline-block bg-gray-800 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-black transition-colors">
+                        Ver no Mapa
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-300 py-12 border-t-4 border-brandYellow">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Brand Info -->
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="bg-brandYellow p-1 rounded-lg">
+                            <span class="text-brandRed font-black text-sm">BIG</span><span class="text-brandGreen font-black text-sm">MED</span>
+                        </div>
+                        <span class="font-bold text-white text-lg">Farmácia BIG MED</span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Cuidando da sua saúde com dedicação, produtos de qualidade e entregas ágeis pelo WhatsApp.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3 uppercase tracking-wider">Navegação</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#inicio" class="hover:text-brandYellow transition-colors">Início</a></li>
+                        <li><a href="#produtos" class="hover:text-brandYellow transition-colors">Produtos</a></li>
+                        <li><a href="#categorias" class="hover:text-brandYellow transition-colors">Categorias</a></li>
+                        <li><a href="#sobre" class="hover:text-brandYellow transition-colors">Sobre Nós</a></li>
+                        <li><a href="#contato" class="hover:text-brandYellow transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal / Compliance Notice -->
+                <div class="md:col-span-2">
+                    <h4 class="text-white font-bold text-sm mb-3 uppercase tracking-wider">Avisos Legais & Sanitários</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-2">
+                        Os preços e a disponibilidade dos produtos apresentados estão sujeitos à confirmação pela farmácia antes da efetivação do pedido. O envio do pedido pelo WhatsApp não constitui confirmação automática de venda.
+                    </p>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Medicamentos sujeitos a retenção de receita médica ou controle especial serão dispensados estritamente em conformidade com as normas da Anvisa e legislação vigente.
+                    </p>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-gray-800 text-center text-xs text-gray-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>&copy; <span id="currentYear"></span> Farmácia BIG MED. Todos os direitos reservados.</p>
+                <p>Desenvolvido com foco em atendimento ágil via WhatsApp.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5582996402650?text=Ol%C3%A1!%20Acessei%20o%20site%20da%20farm%C3%A1cia%20e%20gostaria%20de%20obter%20mais%20informa%C3%A7%C3%B5es." 
+       target="_blank" 
+       rel="noopener"
+       aria-label="Fale conosco no WhatsApp"
+       class="fixed bottom-6 right-6 z-40 bg-brandGreen text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-brandDarkGreen hover:scale-110 transition-all duration-300 group focus:outline-none focus:ring-4 focus:ring-green-300">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <!-- Tooltip -->
+        <span class="absolute right-16 bg-gray-900 text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+            Fale Conosco
+        </span>
+    </a>
+
+    <div id="cartModalOverlay" onclick="toggleCartDrawer()" class="fixed inset-0 bg-black/50 z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    
+    <div id="cartDrawer" class="fixed top-0 right-0 h-full w-full sm:w-96 bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+        <!-- Cart Header -->
+        <div class="p-4 bg-brandYellow border-b border-yellow-300 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-cart-shopping text-brandRed text-xl"></i>
+                <h3 class="font-extrabold text-gray-900 text-lg">Seu Carrinho</h3>
+            </div>
+            <button onclick="toggleCartDrawer()" class="text-gray-700 hover:text-gray-900 text-xl font-bold p-1">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Cart Items List Container -->
+        <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar">
+            <!-- Dynamic Cart Items -->
+        </div>
+
+        <!-- Empty Cart Template State -->
+        <div id="emptyCartState" class="hidden flex-1 flex-col items-center justify-center p-6 text-center">
+            <div class="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+                <i class="fa-solid fa-basket-shopping text-3xl text-brandRed"></i>
+            </div>
+            <h4 class="font-bold text-gray-800 text-lg">Seu carrinho está vazio</h4>
+            <p class="text-xs text-gray-500 mt-1 mb-6">Navegue pelos produtos e adicione os itens que deseja encomendar.</p>
+            <button onclick="toggleCartDrawer()" class="bg-brandRed text-white px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider">
+                Ver Produtos
+            </button>
+        </div>
+
+        <!-- Cart Footer & Actions -->
+        <div id="cartFooter" class="p-4 bg-gray-50 border-t border-gray-200 space-y-3">
+            <div class="space-y-1.5 text-sm">
+                <div class="flex justify-between text-gray-600">
+                    <span>Quantidade de itens:</span>
+                    <span id="cartTotalItems" class="font-semibold text-gray-800">0</span>
+                </div>
+                <div class="flex justify-between text-lg font-black text-gray-900 pt-2 border-t border-gray-200">
+                    <span>Valor Total:</span>
+                    <span id="cartTotalPrice" class="text-brandGreen">R$ 0,00</span>
+                </div>
+            </div>
+
+            <button onclick="sendOrderToWhatsApp()" class="w-full bg-brandGreen hover:bg-brandDarkGreen text-white font-bold py-3.5 px-4 rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 text-sm uppercase tracking-wider">
+                <i class="fa-brands fa-whatsapp text-xl"></i> Finalizar Pedido pelo WhatsApp
+            </button>
+
+            <button onclick="clearCart()" class="w-full text-xs text-red-600 hover:text-red-800 font-semibold text-center py-1">
+                <i class="fa-solid fa-trash-can mr-1"></i> Limpar Carrinho
+            </button>
+        </div>
+    </div>
+
     <script>
-        /* ==========================================================================
-           CONFIGURAÇÕES DA IPHONERIA MATIAS (Facilmente Editável)
-           ========================================================================== */
-        const STORE_CONFIG = {
-            name: "iPhoneria Matias",
-            instagramHandle: "@iphoneria.matias",
-            instagramUrl: "https://instagram.com",
-            whatsappNumber: "5511999999999", // Digite o WhatsApp oficial da loja aqui (apenas números com DDD)
-            address: "São Paulo, SP - Atendimento com hora marcada",
-            businessHours: "Segunda a Sábado das 09h às 19h",
-            locationMapUrl: "https://maps.google.com" // Link do Google Maps
+        // Set dynamic current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // 1. CONFIGURATION & PRODUCTS DATABASE
+        const PHARMACY_CONFIG = {
+            name: "Farmácia BIG MED",
+            whatsappNumber: "5582996402650" // Formatted without space or signs
         };
 
-        // State object
-        let leadState = {
-            interest: "",
-            name: "",
-            phone: "",
-            detail: ""
-        };
+        const CATEGORIES = [
+            { id: "medicamentos", name: "Medicamentos", icon: "fa-pills" },
+            { id: "vitaminas", name: "Vitaminas e Suplementos", icon: "fa-prescription-bottle-medical" },
+            { id: "higiene", name: "Higiene Pessoal", icon: "fa-pump-soap" },
+            { id: "pele", name: "Cuidados com a Pele", icon: "fa-spray-can" },
+            { id: "bucal", name: "Higiene Bucal", icon: "fa-tooth" },
+            { id: "bebes", name: "Bebês e Maternidade", icon: "fa-baby" },
+            { id: "socorros", name: "Primeiros Socorros", icon: "fa-kit-medical" },
+            { id: "perfumaria", name: "Perfumaria", icon: "fa-wand-magic-sparkles" }
+        ];
 
-        // Initialize dynamic values on window load
-        window.onload = function() {
-            document.getElementById('year').textContent = new Date().getFullYear();
-            
-            // Set links
-            const instaLink = document.getElementById('link-instagram');
-            if (instaLink) instaLink.href = STORE_CONFIG.instagramUrl;
+        // Fictional sample products for demonstration
+        const PRODUCTS = [
+            {
+                id: 1,
+                name: "Sabonete Líquido Neutro 250ml",
+                category: "higiene",
+                categoryName: "Higiene Pessoal",
+                price: 12.90,
+                desc: "Limpeza suave e hidratação diária para todos os tipos de pele.",
+                icon: "fa-pump-soap",
+                available: true
+            },
+            {
+                id: 2,
+                name: "Creme Hidratante Corporal 200g",
+                category: "pele",
+                categoryName: "Cuidados com a Pele",
+                price: 24.90,
+                desc: "Ação prolongada contra o ressecamento com absorção rápida.",
+                icon: "fa-jar",
+                available: true
+            },
+            {
+                id: 3,
+                name: "Creme Dental Proteção Total 90g",
+                category: "bucal",
+                categoryName: "Higiene Bucal",
+                price: 7.50,
+                desc: "Combate as cáries, mantém o hálito fresco e previne a placa.",
+                icon: "fa-tooth",
+                available: true
+            },
+            {
+                id: 4,
+                name: "Vitamina C 500mg Efervescente 10cpr",
+                category: "vitaminas",
+                categoryName: "Vitaminas e Suplementos",
+                price: 19.90,
+                desc: "Auxilia na imunidade com sabor agradável de laranja.",
+                icon: "fa-prescription-bottle-medical",
+                available: true
+            },
+            {
+                id: 5,
+                name: "Curativo Adesivo Flexível (Caixa c/ 10 un)",
+                category: "socorros",
+                categoryName: "Primeiros Socorros",
+                price: 5.90,
+                desc: "Proteção contra sujeiras e bactérias em pequenos ferimentos.",
+                icon: "fa-bandage",
+                available: true
+            },
+            {
+                id: 6,
+                name: "Fralda Infantil Pênis/Menina Tam M 28un",
+                category: "bebes",
+                categoryName: "Bebês e Maternidade",
+                price: 38.50,
+                desc: "Proteção até 12 horas contra vazamentos para uma noite tranquila.",
+                icon: "fa-baby-carriage",
+                available: true
+            },
+            {
+                id: 7,
+                name: "Álcool em Gel 70% 500ml",
+                category: "higiene",
+                categoryName: "Higiene Pessoal",
+                price: 9.90,
+                desc: "Higienização prática das mãos com aloe vera.",
+                icon: "fa-bottle-droplet",
+                available: true
+            },
+            {
+                id: 8,
+                name: "Protetor Solar FPS 50 120ml",
+                category: "pele",
+                categoryName: "Cuidados com a Pele",
+                price: 45.00,
+                desc: "Proteção UVA/UVB resistente à água e ao suor.",
+                icon: "fa-sun",
+                available: true
+            }
+        ];
 
-            const addrText = document.getElementById('link-address-text');
-            if (addrText) addrText.textContent = STORE_CONFIG.address;
+        let cart = [];
 
-            const footerAddr = document.getElementById('footer-address');
-            if (footerAddr) footerAddr.innerHTML = `<i class="fa-solid fa-location-dot text-brand-yellow mr-1"></i> ${STORE_CONFIG.address}`;
-
-            const footerHours = document.getElementById('footer-hours');
-            if (footerHours) footerHours.innerHTML = `<i class="fa-regular fa-clock text-brand-yellow mr-1"></i> ${STORE_CONFIG.businessHours}`;
-        };
-
-        /* FUNNEL STEP CONTROLLER */
-        function selectOption(optionText) {
-            leadState.interest = optionText;
-            
-            // Update step 2 UI
-            document.getElementById('badge-text').textContent = optionText;
-            
-            // Toggle view
-            document.getElementById('funnel-step-1').classList.add('hidden');
-            document.getElementById('funnel-step-2').classList.remove('hidden');
-
-            // Scroll focus to funnel if needed
-            scrollToFunnel();
+        // Load cart from LocalStorage on start
+        function initCart() {
+            try {
+                const storedCart = localStorage.getItem('bigmed_cart');
+                if (storedCart) {
+                    cart = JSON.parse(storedCart);
+                }
+            } catch (e) {
+                console.error("Erro ao carregar o carrinho do localStorage", e);
+                cart = [];
+            }
+            updateCartUI();
         }
 
-        function resetFunnel() {
-            leadState.interest = "";
-            document.getElementById('funnel-step-2').classList.add('hidden');
-            document.getElementById('funnel-step-1').classList.remove('hidden');
-        }
-
-        function scrollToFunnel() {
-            const el = document.getElementById('funnel-section');
-            if (el) {
-                el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Save cart to LocalStorage
+        function saveCart() {
+            try {
+                localStorage.setItem('bigmed_cart', JSON.stringify(cart));
+            } catch (e) {
+                console.error("Erro ao salvar carrinho no localStorage", e);
             }
         }
 
-        /* HANDLE LEAD FORM SUBMISSION */
-        function handleFunnelSubmit(event) {
-            event.preventDefault();
+        // Helper to format currency to BRL (R$ X,XX)
+        function formatCurrency(value) {
+            return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        }
 
-            const name = document.getElementById('lead-name').value.trim();
-            const phone = document.getElementById('lead-phone').value.trim();
-            const detail = document.getElementById('lead-detail').value.trim();
+        function renderCategories() {
+            const grid = document.getElementById('categoriesGrid');
+            const select = document.getElementById('categorySelect');
 
-            if (!name || !phone) {
-                showToast("Por favor, preencha seu nome e WhatsApp.");
+            grid.innerHTML = '';
+
+            CATEGORIES.forEach(cat => {
+                // Category Card UI
+                const card = document.createElement('button');
+                card.onclick = () => filterByCategory(cat.id);
+                card.className = "flex flex-col items-center justify-center p-3 bg-gray-50 border border-gray-200 rounded-2xl hover:bg-brandYellow/30 hover:border-yellow-400 transition-all text-center group cursor-pointer";
+                card.innerHTML = `
+                    <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-brandRed group-hover:scale-110 transition-transform shadow-sm mb-2">
+                        <i class="fa-solid ${cat.icon}"></i>
+                    </div>
+                    <span class="text-xs font-bold text-gray-800 line-clamp-2">${cat.name}</span>
+                `;
+                grid.appendChild(card);
+
+                // Option in Filter Select
+                const option = document.createElement('option');
+                option.value = cat.id;
+                option.textContent = cat.name;
+                select.appendChild(option);
+            });
+        }
+
+        function renderProducts(productsToRender) {
+            const grid = document.getElementById('productsGrid');
+            const emptyState = document.getElementById('emptySearch');
+
+            grid.innerHTML = '';
+
+            if (productsToRender.length === 0) {
+                emptyState.classList.remove('hidden');
+                return;
+            } else {
+                emptyState.classList.add('hidden');
+            }
+
+            productsToRender.forEach(prod => {
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow p-4 flex flex-col justify-between";
+
+                card.innerHTML = `
+                    <div>
+                        <!-- Badge & Icon Header -->
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="text-[10px] font-bold uppercase tracking-wider bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded-full">
+                                ${prod.categoryName}
+                            </span>
+                            <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600">
+                                <i class="fa-solid ${prod.icon}"></i>
+                            </div>
+                        </div>
+
+                        <!-- Title and Description -->
+                        <h3 class="font-bold text-gray-900 text-base mb-1 line-clamp-2">${prod.name}</h3>
+                        <p class="text-gray-500 text-xs mb-4 line-clamp-2 leading-relaxed">${prod.desc}</p>
+                    </div>
+
+                    <div>
+                        <!-- Price -->
+                        <div class="mb-3">
+                            <span class="text-xs text-gray-400 block">Preço unitário</span>
+                            <span class="text-xl font-black text-brandRed">${formatCurrency(prod.price)}</span>
+                        </div>
+
+                        <!-- Quantity and Add Action -->
+                        <div class="flex items-center gap-2">
+                            <div class="flex items-center border border-gray-300 rounded-lg overflow-hidden bg-gray-50">
+                                <button onclick="adjustTempQty(${prod.id}, -1)" class="px-2 py-1 text-gray-600 hover:bg-gray-200 text-xs font-bold">-</button>
+                                <input type="number" id="qty-input-${prod.id}" value="1" min="1" max="99" class="w-10 text-center text-xs font-bold bg-transparent border-none focus:outline-none" readonly>
+                                <button onclick="adjustTempQty(${prod.id}, 1)" class="px-2 py-1 text-gray-600 hover:bg-gray-200 text-xs font-bold">+</button>
+                            </div>
+                            <button onclick="addToCartFromCatalog(${prod.id})" class="flex-1 bg-brandGreen hover:bg-brandDarkGreen text-white text-xs font-bold py-2.5 px-3 rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-sm">
+                                <i class="fa-solid fa-cart-plus"></i> Adicionar
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+                grid.appendChild(card);
+            });
+        }
+
+        // Adjust input qty before adding to cart
+        function adjustTempQty(productId, delta) {
+            const input = document.getElementById(`qty-input-${productId}`);
+            if (input) {
+                let val = parseInt(input.value) || 1;
+                val += delta;
+                if (val < 1) val = 1;
+                if (val > 99) val = 99;
+                input.value = val;
+            }
+        }
+
+        function filterProducts() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+            const selectedCategory = document.getElementById('categorySelect').value;
+            const sortOption = document.getElementById('sortSelect').value;
+
+            let result = PRODUCTS.filter(prod => {
+                const matchesSearch = prod.name.toLowerCase().includes(searchTerm) || prod.desc.toLowerCase().includes(searchTerm);
+                const matchesCat = selectedCategory === 'todos' || prod.category === selectedCategory;
+                return matchesSearch && matchesCat;
+            });
+
+            // Sorting
+            if (sortOption === 'menor-preco') {
+                result.sort((a, b) => a.price - b.price);
+            } else if (sortOption === 'maior-preco') {
+                result.sort((a, b) => b.price - a.price);
+            } else if (sortOption === 'nome') {
+                result.sort((a, b) => a.name.localeCompare(b.name));
+            }
+
+            renderProducts(result);
+        }
+
+        function filterByCategory(catId) {
+            document.getElementById('categorySelect').value = catId;
+            filterProducts();
+            document.getElementById('produtos').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function resetFilters() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('categorySelect').value = 'todos';
+            document.getElementById('sortSelect').value = 'padrao';
+            filterProducts();
+        }
+
+        function addToCartFromCatalog(productId) {
+            const prod = PRODUCTS.find(p => p.id === productId);
+            if (!prod) return;
+
+            const qtyInput = document.getElementById(`qty-input-${productId}`);
+            const qtyToAdd = parseInt(qtyInput ? qtyInput.value : 1) || 1;
+
+            const existingIndex = cart.findIndex(item => item.id === productId);
+            if (existingIndex > -1) {
+                cart[existingIndex].quantity += qtyToAdd;
+            } else {
+                cart.push({
+                    id: prod.id,
+                    name: prod.name,
+                    price: prod.price,
+                    quantity: qtyToAdd
+                });
+            }
+
+            // Reset catalog input back to 1
+            if (qtyInput) qtyInput.value = 1;
+
+            saveCart();
+            updateCartUI();
+            showCartToast(`${prod.name} adicionado ao carrinho!`);
+        }
+
+        function updateItemQuantity(productId, delta) {
+            const index = cart.findIndex(item => item.id === productId);
+            if (index > -1) {
+                cart[index].quantity += delta;
+                if (cart[index].quantity <= 0) {
+                    cart.splice(index, 1);
+                }
+                saveCart();
+                updateCartUI();
+            }
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            saveCart();
+            updateCartUI();
+        }
+
+        function clearCart() {
+            if (cart.length === 0) return;
+            cart = [];
+            saveCart();
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cartItemsContainer');
+            const emptyState = document.getElementById('emptyCartState');
+            const footer = document.getElementById('cartFooter');
+            const badge = document.getElementById('cartBadge');
+            const totalItemsSpan = document.getElementById('cartTotalItems');
+            const totalPriceSpan = document.getElementById('cartTotalPrice');
+
+            // Calculate total quantity and price using specified formulas
+            const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            // Badge counter
+            badge.textContent = totalQuantity;
+            if (totalQuantity > 0) {
+                badge.classList.remove('hidden');
+            }
+
+            // Empty cart view toggle
+            if (cart.length === 0) {
+                container.classList.add('hidden');
+                footer.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                emptyState.classList.add('flex');
+            } else {
+                container.classList.remove('hidden');
+                footer.classList.remove('hidden');
+                emptyState.classList.add('hidden');
+                emptyState.classList.remove('flex');
+            }
+
+            // Render Items
+            container.innerHTML = '';
+            cart.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                const itemEl = document.createElement('div');
+                itemEl.className = "bg-gray-50 border border-gray-200 rounded-xl p-3 flex flex-col justify-between gap-2";
+                itemEl.innerHTML = `
+                    <div class="flex justify-between items-start">
+                        <span class="font-bold text-gray-800 text-xs line-clamp-2">${item.name}</span>
+                        <button onclick="removeFromCart(${item.id})" class="text-gray-400 hover:text-red-600 text-sm p-0.5">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="text-gray-500">${formatCurrency(item.price)} cada</span>
+                        <span class="font-black text-brandGreen">${formatCurrency(subtotal)}</span>
+                    </div>
+                    <div class="flex items-center justify-between pt-1 border-t border-gray-200">
+                        <span class="text-[10px] text-gray-400 font-medium">Quantidade</span>
+                        <div class="flex items-center border border-gray-300 rounded bg-white">
+                            <button onclick="updateItemQuantity(${item.id}, -1)" class="px-2 py-0.5 text-gray-600 hover:bg-gray-100 font-bold">-</button>
+                            <span class="px-2 text-xs font-bold">${item.quantity}</span>
+                            <button onclick="updateItemQuantity(${item.id}, 1)" class="px-2 py-0.5 text-gray-600 hover:bg-gray-100 font-bold">+</button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(itemEl);
+            });
+
+            totalItemsSpan.textContent = totalQuantity;
+            totalPriceSpan.textContent = formatCurrency(totalPrice);
+        }
+
+        function sendOrderToWhatsApp() {
+            if (cart.length === 0) {
+                alert("Seu carrinho está vazio. Adicione pelo menos um produto antes de finalizar o pedido.");
                 return;
             }
 
-            leadState.name = name;
-            leadState.phone = phone;
-            leadState.detail = detail;
+            let message = `Olá! Gostaria de fazer um pedido na Farmácia BIG MED.\n\nMeu pedido:\n\n`;
 
-            // Build prefilled WhatsApp message
-            let message = `Olá! Meu nome é *${name}*.\n`;
-            message += `Tenho interesse em: *${leadState.interest}*.\n`;
-            if (detail) {
-                message += `Detalhes: ${detail}\n`;
-            }
-            message += `Gostaria de receber mais informações e um orçamento!`;
+            let grandTotal = 0;
 
-            sendToWhatsApp(message);
+            cart.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                grandTotal += subtotal;
+
+                message += `${item.name}\n`;
+                message += `Quantidade: ${item.quantity}\n`;
+                message += `Valor unitário: ${formatCurrency(item.price)}\n`;
+                message += `Subtotal: ${formatCurrency(subtotal)}\n\n`;
+            });
+
+            message += `Valor total dos produtos: ${formatCurrency(grandTotal)}\n\n`;
+            message += `Por favor, confirmem a disponibilidade dos produtos e as condições de entrega ou retirada.\n\n`;
+            message += `Obrigado!`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${PHARMACY_CONFIG.whatsappNumber}?text=${encodedMessage}`;
+
+            // Open WhatsApp link in new tab
+            window.open(whatsappUrl, '_blank');
         }
 
-        /* PRODUCT DIRECT INQUIRY */
-        function inquireProduct(productName) {
-            const message = `Olá! Tenho interesse no *${productName}*.\nGostaria de saber a disponibilidade em estoque e as opções de pagamento!`;
-            sendToWhatsApp(message);
-        }
+        // Drawer Navigation Toggles
+        function toggleCartDrawer() {
+            const drawer = document.getElementById('cartDrawer');
+            const overlay = document.getElementById('cartModalOverlay');
 
-        /* GENERAL WHATSAPP OPENER */
-        function openGeneralWhatsApp(motive) {
-            const message = `Olá! Vim através da Bio do Instagram (*${motive}*). Gostaria de mais informações.`;
-            sendToWhatsApp(message);
-        }
+            const isOpen = !drawer.classList.contains('translate-x-full');
 
-        /* LOCATION OPENER */
-        function openLocation() {
-            if (STORE_CONFIG.locationMapUrl && STORE_CONFIG.locationMapUrl !== "#") {
-                window.open(STORE_CONFIG.locationMapUrl, '_blank');
+            if (isOpen) {
+                drawer.classList.add('translate-x-full');
+                overlay.classList.add('opacity-0', 'pointer-events-none');
             } else {
-                openGeneralWhatsApp('Solicitar Endereço e Localização');
+                drawer.classList.remove('translate-x-full');
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
             }
         }
 
-        /* HELPER TO BUILD WHATSAPP URL AND OPEN */
-        function sendToWhatsApp(message) {
-            const encoded = encodeURIComponent(message);
-            const waUrl = `https://wa.me/${STORE_CONFIG.whatsappNumber}?text=${encoded}`;
-            window.open(waUrl, '_blank');
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
         }
 
-        /* CUSTOM TOAST NOTIFICATION */
-        function showToast(text) {
-            const existing = document.getElementById('custom-toast');
-            if (existing) existing.remove();
-
+        // Feedback Toast Notification
+        function showCartToast(text) {
             const toast = document.createElement('div');
-            toast.id = 'custom-toast';
-            toast.className = 'fixed bottom-5 left-1/2 -translate-x-1/2 bg-brand-yellow text-brand-dark px-4 py-2.5 rounded-xl font-bold text-xs shadow-2xl z-50 transition transform duration-300 animate-bounce';
-            toast.textContent = text;
-
+            toast.className = "fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs font-semibold px-4 py-2.5 rounded-full shadow-2xl z-50 flex items-center gap-2 border border-yellow-400";
+            toast.innerHTML = `<i class="fa-solid fa-circle-check text-brandYellow"></i> ${text}`;
             document.body.appendChild(toast);
 
             setTimeout(() => {
-                toast.remove();
-            }, 3000);
+                toast.classList.add('opacity-0', 'transition-opacity', 'duration-300');
+                setTimeout(() => toast.remove(), 300);
+            }, 2500);
         }
+
+        // Initialize on Load
+        window.onload = function() {
+            renderCategories();
+            renderProducts(PRODUCTS);
+            initCart();
+        };
     </script>
 </body>
 </html>
